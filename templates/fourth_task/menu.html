@@ -1,0 +1,67 @@
+<!-- UrbanDjango/templates/fourth_task/menu.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block pagename %}{% endblock %}</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        footer {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% block menu %}
+                <li><a href="{% url 'home' %}">Главная страница</a></li>
+                <li><a href="{% url 'shop' %}">Магазин</a></li>
+                <li><a href="{% url 'cart' %}">Корзина</a></li>
+                {% endblock %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
